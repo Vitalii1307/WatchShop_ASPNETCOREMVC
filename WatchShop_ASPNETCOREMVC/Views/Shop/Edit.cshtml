@@ -1,0 +1,32 @@
+﻿@model WatchShop_ASPNETCOREMVC.ViewModels.UpdateWatchViewModel
+@{
+}
+
+
+<h1>Edit Watch</h1>
+<form method="post" action="Edit" enctype="multipart/form-data" class="mt-5">
+
+  <div class="mb-3">
+    <label for="" class="form-label">Id</label>
+    <input type="text" class="form-control" asp-for="Id" readonly>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Name</label>
+    <input type="text" class="form-control" asp-for="Name">
+    <span asp-validation-for="Name" class="text-danger"></span>
+  </div>    
+  <div class="form-group">
+    <label asp-for="ImageFile" class="control-label">Edit Photo</label>
+    <input asp-for="ImageFile" accept="image/*" />
+
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Price</label>
+    <input type="number" class="form-control" asp-for="Price">
+   <span asp-validation-for="Price" class="text-danger"></span>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Shop">Delete</button>
+</form>
